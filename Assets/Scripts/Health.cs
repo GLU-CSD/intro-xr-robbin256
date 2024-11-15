@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        UpdateHealthBar();
+        UpdateHealthBar(); 
     }
 
     public void TakeDamage(float amount)
@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthBar();
+        Debug.Log("clicked");
     }
 
     public void RestoreHealth(float amount)
