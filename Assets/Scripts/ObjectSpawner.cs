@@ -27,7 +27,6 @@ public class ObjectSpawner : MonoBehaviour
         if (Time.time >= lastSpawnTime + spawnInterval)
         {
             SpawnObject();
-            Debug.Log("spawn");
             lastSpawnTime = Time.time;
         }
     }
@@ -37,10 +36,6 @@ public class ObjectSpawner : MonoBehaviour
         if (objectToSpawn != null)
         {
             Instantiate(objectToSpawn, transform.position, transform.rotation);
-        }
-        else
-        {
-            Debug.LogWarning("Object to spawn is not set.");
         }
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -12,19 +13,26 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         // Zoek de XR Rig met de tag "Player"
-        GameObject player = GameObject.FindGameObjectWithTag("Base");
-        if (player != null)
+        if (agent.enabled)
         {
-            playerTransform = player.transform;
+            GameObject player = GameObject.FindGameObjectWithTag("Base");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+               
+            }
         }
     }
 
     void Update()
     {
         // Beweeg naar de positie van de speler als deze is gevonden
-        if (playerTransform != null)
+        if (agent.enabled)
         {
-            agent.SetDestination(playerTransform.position);
+            if (playerTransform != null)
+            {
+                agent.SetDestination(playerTransform.position);
+            }
         }
     }
 }

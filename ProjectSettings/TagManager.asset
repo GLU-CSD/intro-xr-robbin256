@@ -8,6 +8,7 @@ TagManager:
   - Base
   - Terrain
   - Spawner
+  - FirstTarget
   layers:
   - Default
   - TransparentFX

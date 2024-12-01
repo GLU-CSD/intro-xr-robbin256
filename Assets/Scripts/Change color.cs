@@ -19,14 +19,12 @@ public class Changecolor : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter");
         Renderer renderer = other.GetComponent<Renderer>();
         Material mat = renderer.material;
         mat.color = Color.green;
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Enter");
         Renderer renderer = other.GetComponent<Renderer>();
         Material mat = renderer.material;
         mat.color = Color.blue;
